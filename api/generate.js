@@ -13,27 +13,31 @@ RULES — follow exactly:
    - In-app CTA: ≤4 words followed by →
    - Push title: ≤40 characters
    - Push body: ≤90 characters
-5. CALLOUT: One tactical insight about copy timing, audience segmentation risk, tone mismatch, or sequencing logic. Not a product suggestion.
+   - SMS text: ≤160 characters total, conversational, end with a clear next step or [link]
+   - LinkedIn headline: ≤70 characters
+   - LinkedIn intro: ≤150 characters, professional tone
+   - LinkedIn CTA: ≤4 words
+   - TikTok hook: ≤15 words, scroll-stopping line spoken or shown on screen in first 3 seconds
+   - TikTok script: ≤80 words, voiceover/on-screen text for a 15–30s video, natural and entertaining
+   - TikTok cta: ≤10 words, end-of-video action
+   - Meta primary_text: ≤125 characters, conversational, benefit-forward
+   - Meta headline: ≤40 characters, punchy benefit statement
+   - Meta cta: button label only (e.g. Learn More, Download Now, Sign Up, Get Started)
+5. CHANNELS: Only include JSON fields for the channels listed in "Selected channels". Omit all other channel fields entirely.
+6. CALLOUT: One tactical insight about copy timing, audience segmentation risk, tone mismatch, or sequencing logic. Not a product suggestion.
 
 Return ONLY valid JSON — no text before or after the JSON:
 {
   "trends": [
     {
       "trend_text": "2-3 sentences on a specific content or messaging trend relevant to this product, region, and user moment",
-      "email": {
-        "subject": "subject line",
-        "preview": "preview text",
-        "body": "Hook sentence. Value sentence. [CTA text]"
-      },
-      "inapp": {
-        "headline": "short headline",
-        "body": "short body copy under 20 words",
-        "cta": "button text →"
-      },
-      "push": {
-        "title": "push title under 40 chars",
-        "body": "push body under 90 chars"
-      },
+      "email": { "subject": "...", "preview": "...", "body": "Hook. Value. [CTA]" },
+      "sms": { "text": "..." },
+      "inapp": { "headline": "...", "body": "...", "cta": "... →" },
+      "push": { "title": "...", "body": "..." },
+      "linkedin": { "headline": "...", "intro": "...", "cta": "..." },
+      "tiktok": { "hook": "...", "script": "...", "cta": "..." },
+      "meta": { "primary_text": "...", "headline": "...", "cta": "..." },
       "ab_plan": {
         "hypothesis": "testable hypothesis comparing this angle to an alternative approach",
         "signal": "leading indicator to measure — faster feedback than final conversion metric",
