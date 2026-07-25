@@ -59,13 +59,13 @@ export default async function handler(req, res) {
     return res.status(405).json({ error: "Method not allowed" })
   }
 
-  const { productName, productType, channels, stage, moment } = req.body
+  const { product, type, channels, stage, moment } = req.body
 
-  if (!productName || !productType || !channels?.length || !stage || !moment) {
+  if (!product || !type || !channels?.length || !stage || !moment) {
     return res.status(400).json({ error: "Missing required fields" })
   }
 
-  const userMessage = `Product: ${productName} (${productType})
+  const userMessage = `Product: ${product} (${type})
 Selected channels: ${channels.join(", ")}
 Lifecycle stage: ${stage}
 User moment: ${moment}
