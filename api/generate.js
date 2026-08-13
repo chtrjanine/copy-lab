@@ -138,7 +138,7 @@ Generate 3 campaign brief packages for this exact scenario. Each must use a diff
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        model: "deepseek-v4-flash",
+        model: process.env.DEEPSEEK_MODEL || "deepseek-chat",
         response_format: { type: "json_object" },
         messages: [
           { role: "system", content: SYSTEM_PROMPT },
